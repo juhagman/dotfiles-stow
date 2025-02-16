@@ -60,7 +60,6 @@ setopt prompt_subst
 # command aliases
 alias ls_time='ls -lt'
 alias ls="ls -G"
-alias yle-dl="docker run --rm -ti -u=$(id -u):$(id -g) -v "$(pwd)":/out taskinen/yle-dl" 
 
 function locate {
   mdfind -onlyin `pwd` "kMDItemDisplayName == $1"
@@ -69,10 +68,6 @@ function locate {
 function mman {
   man -t $1 | open -fa Preview 
 }
-
-# Docker
-alias dockviz="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz"
-alias docker_images_tree="dockviz images -d | dot -Tpng -o images.png && open images.png"
 
 # Libressl (for mostly vapor)
 export PATH="/opt/brew/opt/libressl/bin:$PATH"
